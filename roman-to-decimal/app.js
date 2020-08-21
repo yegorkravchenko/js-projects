@@ -5,20 +5,20 @@ const inputs = document.querySelectorAll('input[type="text"]');
 
 const [input, output] = inputs;
 const symbolsVal = {
-    i: 1,
-    v: 5,
-    x: 10,
-    l: 50,
-    c: 100,
-    d: 500,
-    m: 1000
+	i: 1,
+	v: 5,
+	x: 10,
+	l: 50,
+	c: 100,
+	d: 500,
+	m: 1000,
 };
 
 let isRomanChecked = radioInputs[0].checked;
 
 radioInputs.forEach((input) =>
 	input.addEventListener('change', () => {
-        reset();
+		reset();
 
 		if (input.checked === true && input.id === 'decimal') {
 			isRomanChecked = false;
@@ -42,34 +42,36 @@ input.addEventListener('input', () => {
 
 function reset() {
 	input.value = '';
-    output.value = '';
-    input.style.borderColor = '#ccc';
+	output.value = '';
+	input.style.borderColor = '#ccc';
 }
 
 function convertNumber() {
 	const romanRegex = /^[ivxlcdm]+$/i;
-    const decimalRegex = /^[0-9]+$/;
-    const inputValue = input.value.toLowerCase();
+	const decimalRegex = /^[0-9]+$/;
+	const inputValue = input.value.toLowerCase();
 
 	if (isRomanChecked) {
 		if (romanRegex.test(inputValue)) {
-            let number = 0;
+			let number = 0;
 
 			for (let i = inputValue.length - 1; i >= 0; i--) {
-                if (symbolsVal[inputValue[i]] > number || inputValue[i] === inputValue[i + 1]) {
-                    number += symbolsVal[inputValue[i]];
-                } else {
-                    number -= symbolsVal[inputValue[i]];
-                }
-            }
+				if (
+					symbolsVal[inputValue[i]] > number ||
+					inputValue[i] === inputValue[i + 1]
+				) {
+					number += symbolsVal[inputValue[i]];
+				} else {
+					number -= symbolsVal[inputValue[i]];
+				}
+			}
 
-            output.value = number.toString();
+			output.value = number.toString();
 		} else {
 			input.style.borderColor = '#FF6347';
 		}
 	} else {
 		if (decimalRegex.test(inputValue)) {
-
 		} else {
 			input.style.borderColor = '#FF6347';
 		}
