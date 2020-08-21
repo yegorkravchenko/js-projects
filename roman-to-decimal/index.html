@@ -7,16 +7,18 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <form>
-            <input type="radio" name="type" checked>
+        <form autocomplete="off" spellcheck="false">
+            <input type="radio" name="type" id="roman" checked>
             <label for="type">Roman</label>
-            <input type="radio" name="type">
+            <input type="radio" name="type" id="decimal">
             <label for="type">Decimal</label>
             <label class="text-label" for="first-input">Roman:</label>
             <input type="text" name="first-input">
             <label class="text-label" for="second-input">Decimal:</label>
-            <input type="text" name="second-input">
+            <input type="text" name="second-input" disabled>
             <button class="btn" type="button">Convert</button>
         </form>
+
+        <script src="app.js"></script>
     </body>
 </html>
