@@ -14,6 +14,9 @@ const symbolsVal = {
 	m: 1000,
 };
 
+const romanRegex = /^[ivxlcdm]+$/i;
+const decimalRegex = /^[0-9]+$/;
+
 let isRomanChecked = radioInputs[0].checked;
 
 radioInputs.forEach((input) =>
@@ -36,8 +39,13 @@ radioInputs.forEach((input) =>
 	})
 );
 
-input.addEventListener('input', () => {
-	// TODO
+input.addEventListener('keyup', () => {
+	if (romanRegex.test(input.value)) {
+		input.value = input.value.toUpperCase();
+		input.style.borderColor = '#ccc';
+	} else {
+		input.style.borderColor = '#FF6347';
+	}
 });
 
 function reset() {
@@ -47,8 +55,6 @@ function reset() {
 }
 
 function convertNumber() {
-	const romanRegex = /^[ivxlcdm]+$/i;
-	const decimalRegex = /^[0-9]+$/;
 	const inputValue = input.value.toLowerCase();
 
 	if (isRomanChecked) {
