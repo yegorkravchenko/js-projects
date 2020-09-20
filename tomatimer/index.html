@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tomatimer: stay focused!</title>
+        <link rel="stylesheet" href="./styles/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div class="main-container">
+            <div class="container">
+                <div class="modal">
+                    <p>The timer is over!</p>
+                </div>
+                <h1>Tomatimer</h1>
+                <div class="timer-container">
+                    <div class="timer">
+                        <input class="timer-input" type="text" value="25" maxlength="2">
+                        <span>:</span>
+                        <input class="timer-input" type="text" value="00" maxlength="2">
+                    </div>
+                    <div class="presets-container">
+                        <p>Presets</p>
+                        <div>
+                            <div class="preset">
+                                <p><span>15</span> min</p>
+                            </div>
+                            <div class="preset">
+                                <p><span>25</span> min</p>
+                            </div>
+                            <div class="preset">
+                                <p><span>60</span> min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="btn" src="./img/play-btn.svg" alt="Start button">
+                </div>
+                <p id="message">Stay focused<br>on your task!</p>
+            </div>
+        </div>
+
+        <script src="./app.js"></script>
+    </body>
+</html>
