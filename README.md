@@ -1,5 +1,6 @@
 # js-projects
-Various javascript projects developed to improve my coding skills.
+
+**JS-projects** is a collection of various javascript projects inspired by the ideas from several other repos and developed to improve coding skills.
 
 ## Projects List
 
